@@ -2,6 +2,8 @@ package br.grtree.functions;
 
 import java.util.Iterator;
 
+import br.grtree.app.File;
+
 public class TreeUtils {
 	
 	// private static String preOrder = "";
@@ -30,9 +32,8 @@ public class TreeUtils {
 		
 		return 1 + h;
 	}
-	
+
 	public static <E> String toStringPreOrder(Tree<E> T, Position<E> v) {
-		// preOrder += preOrder.isEmpty() ? v.getElement().toString() : ", " + v.getElement().toString();
 		String preOrder = v.getElement().toString();
 		
 		Iterator<Position<E>> w = T.children(v);
@@ -55,6 +56,24 @@ public class TreeUtils {
 		postOrder += v.getElement();
 
 		return postOrder;
+	}
+	
+	public static String toStringPreOrderFile(Tree<File> T, Position<File> v) {
+		String preOrder = v.getElement().toString();
+		
+		Iterator<Position<File>> w = T.children(v);
+		
+		while (w.hasNext()) {
+			Position<File> pFile = w.next();
+			
+			if(pFile.getElement().isDirectory()) {
+				
+			}
+			
+			preOrder += ", " + toStringPreOrderFile(T, pFile);
+		}
+
+		return preOrder;
 	}
 
 }

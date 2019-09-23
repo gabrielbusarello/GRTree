@@ -7,6 +7,7 @@ public class File {
 	private boolean directory;
 
 	public File(String name, boolean file, boolean directory) {
+		this.size = 1;
 		this.name = name;
 		this.file = file;
 		this.directory = directory;
@@ -44,4 +45,11 @@ public class File {
 	public void setDirectory(boolean directory) {
 		this.directory = directory;
 	}
+
+	@Override
+	public String toString() {
+		return "File [size=" + size + ", name=" + name + ", file=" + file + ", directory=" + directory + "]";
+	}
+	
+	
 }
