@@ -33,39 +33,7 @@ public class main {
 		Position<File> childMySQL 		= tree.addChild(childDownloads, fileMySQL);
 		
 		Iterator<Position<File>> iteratorRoot = root.getChildren();
-//		System.out.println(TreeUtils.toStringPreOrderFile(tree, root));
 		TreeUtils.toIntPostOrder(tree, root);
 		System.out.println(TreeUtils.toStringPreOrderFile(tree, root));
-//		while (iteratorRoot.hasNext()) {
-//			Position<File> pFile = iteratorRoot.next();
-//			
-//			Iterator<Position<File>> iteratorChild = pFile.getChildren();
-//			
-//			while (iteratorChild.hasNext()) {
-//				Position<File> pFile1 = iteratorChild.next();
-//				
-//				if (pFile1.getElement().isFile()) {
-//					pFile.getElement().setSize(pFile.getElement().getSize() + pFile1.getElement().getSize());
-//				}
-//			}
-//
-//			root.getElement().setSize(root.getElement().getSize() + pFile.getElement().getSize());
-//		}
-//
-//		System.out.println(root.getElement().getName() + " - " + root.getElement().getSize());
-//		iteratorRoot = root.getChildren();
-//		while (iteratorRoot.hasNext()) {
-//			Position<File> pFile = iteratorRoot.next();
-//
-//			System.out.println("   " + pFile.getElement().getName() + " - " + pFile.getElement().getSize());
-//			
-//			Iterator<Position<File>> iteratorChild = pFile.getChildren();
-//
-//			while (iteratorChild.hasNext()) {
-//				Position<File> pFile1 = iteratorChild.next();
-//
-//				System.out.println("      " + pFile1.getElement().getName() + " - " + pFile1.getElement().getSize());
-//			}
-//		}
 	}
 }
