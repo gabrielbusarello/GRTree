@@ -65,7 +65,7 @@ public class TreeUtils {
 		
 		while (w.hasNext()) {
 			Position<File> file = w.next();
-			preOrder += toStringPreOrder(T, file);
+			preOrder += toStringPreOrder(T, file).replace(", ", "");
 		}
 
 		return preOrder;

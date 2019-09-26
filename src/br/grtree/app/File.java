@@ -48,7 +48,8 @@ public class File {
 
 	@Override
 	public String toString() {
-		return name + " - " + size + "\n";
+		name = (this.isFile() ? "   " : "") + name;  
+		return name + " - " + size + " MB" + "\n";
 	}
 	
 	

@@ -9,14 +9,14 @@ import br.grtree.functions.TreeUtils;
 public class main {
 	public static void main(String[] args) {
 		File fileC         = new File("C:", false, true);
-		File fileAndroid   = new File("AndroidSDK", false, true);
-		File fileEclipse   = new File("eclipse", false, true);
-		File fileDownloads = new File("downloads", false, true);
+		File fileAndroid   = new File("   /AndroidSDK", false, true);
+		File fileEclipse   = new File("   /eclipse", false, true);
+		File fileDownloads = new File("   /downloads", false, true);
 		
 		File fileGimp2  = new File(500,  "Gimp 2.exe", true, false);
-		File fileJava   = new File(1500, "java.exe", true, false);
-		File fileArtigo = new File(80,   "artigo.pdf", true, false);
-		File fileMySQL  = new File(1000, "mysql-driver-jdbc.jar", true, false);
+		File fileJava   = new File(1500, "   java.exe", true, false);
+		File fileArtigo = new File(80,   "   artigo.pdf", true, false);
+		File fileMySQL  = new File(1000, "   mysql-driver-jdbc.jar", true, false);
 		File fileTCC    = new File(100,  "tcc.doc", true, false);
 
 		Tree<File> tree = new Tree<File>();
@@ -34,8 +34,7 @@ public class main {
 		
 		Iterator<Position<File>> iteratorRoot = root.getChildren();
 //		System.out.println(TreeUtils.toStringPreOrderFile(tree, root));
-		System.out.println(TreeUtils.toIntPostOrder(tree, root));
-//		System.out.println(TreeUtils.toStringPreOrder(tree, root));
+		TreeUtils.toIntPostOrder(tree, root);
 		System.out.println(TreeUtils.toStringPreOrderFile(tree, root));
 //		while (iteratorRoot.hasNext()) {
 //			Position<File> pFile = iteratorRoot.next();
