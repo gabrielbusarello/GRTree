@@ -48,7 +48,7 @@ public class File {
 
 	@Override
 	public String toString() {
-		return "File [size=" + size + ", name=" + name + ", file=" + file + ", directory=" + directory + "]";
+		return name + " - " + size + "\n";
 	}
 	
 	

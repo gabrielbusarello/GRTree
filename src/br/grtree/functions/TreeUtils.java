@@ -57,23 +57,33 @@ public class TreeUtils {
 
 		return postOrder;
 	}
-	
+
 	public static String toStringPreOrderFile(Tree<File> T, Position<File> v) {
 		String preOrder = v.getElement().toString();
 		
 		Iterator<Position<File>> w = T.children(v);
 		
 		while (w.hasNext()) {
-			Position<File> pFile = w.next();
-			
-			if(pFile.getElement().isDirectory()) {
-				
-			}
-			
-			preOrder += ", " + toStringPreOrderFile(T, pFile);
+			Position<File> file = w.next();
+			preOrder += toStringPreOrder(T, file);
 		}
 
 		return preOrder;
+	}
+
+	public static int toIntPostOrder(Tree<File> T, Position<File> v) {
+		int postOrder = 0;
+		Iterator<Position<File>> w = T.children(v);
+		
+		while (w.hasNext()) {
+			postOrder += toIntPostOrder(T, w.next());
+		}
+		
+		if (v.getElement().isDirectory()) {
+			v.getElement().setSize(1 + postOrder);
+		}
+		
+		return v.getElement().getSize();
 	}
 
 }

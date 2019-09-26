@@ -33,6 +33,9 @@ public class main {
 		Position<File> childMySQL 		= tree.addChild(childDownloads, fileMySQL);
 		
 		Iterator<Position<File>> iteratorRoot = root.getChildren();
+//		System.out.println(TreeUtils.toStringPreOrderFile(tree, root));
+		System.out.println(TreeUtils.toIntPostOrder(tree, root));
+//		System.out.println(TreeUtils.toStringPreOrder(tree, root));
 		System.out.println(TreeUtils.toStringPreOrderFile(tree, root));
 //		while (iteratorRoot.hasNext()) {
 //			Position<File> pFile = iteratorRoot.next();
